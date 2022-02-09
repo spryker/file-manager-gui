@@ -15,14 +15,14 @@ use Symfony\Component\Validator\Constraints\FileValidator as SymfonyFileValidato
 class FileValidator extends SymfonyFileValidator
 {
     /**
-     * @param \Generated\Shared\Transfer\FileUploadTransfer $value
+     * @param \Generated\Shared\Transfer\FileUploadTransfer $fileUploadTransfer
      * @param \Symfony\Component\Validator\Constraint $constraint
      *
      * @return void
      */
-    public function validate($value, Constraint $constraint)
+    public function validate($fileUploadTransfer, Constraint $constraint)
     {
-        parent::validate($this->createSymfonyUploadedFileFromTransfer($value), $constraint);
+        parent::validate($this->createSymfonyUploadedFileFromTransfer($fileUploadTransfer), $constraint);
     }
 
     /**
