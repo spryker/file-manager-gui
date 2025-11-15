@@ -20,8 +20,8 @@
             <div id="file-directory-tree">
                 {% include '@FileManagerGui/DirectoriesTree/tree.twig' %}
             </div>
-            <div>
-                <input type="button" id="file-directory-tree-save-btn" class="btn btn-primary pull-left m-r-sm"
+            <div class="clearfix">
+                <input type="button" id="file-directory-tree-save-btn" class="btn btn-primary float-start m-r-sm"
                        value="{{ 'Save order' | trans }}" disabled="disabled"/>
                 {% include '@FileManagerGui/_partials/progressbar.twig' with {
                     idProgressbar: 'file-directory-tree-update-loader',
