@@ -185,7 +185,7 @@ class MimeTypeSettingsTable extends AbstractTable
     /**
      * @param array<string, mixed> $item
      *
-     * @return list<string>
+     * @return array<string>
      */
     protected function buildExtensions(array $item): array
     {
