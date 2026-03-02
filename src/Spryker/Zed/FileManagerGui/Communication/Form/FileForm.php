@@ -115,11 +115,6 @@ class FileForm extends AbstractType
             ->addUploadedFileField($builder, $options);
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setRequired(static::OPTION_AVAILABLE_LOCALES);

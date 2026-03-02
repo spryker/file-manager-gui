@@ -42,12 +42,6 @@ class FileManagerGuiDirectoryCreateCest
      */
     protected const MESSAGE_SUCCESS = 'The file directory was added successfully.';
 
-    /**
-     * @param \SprykerTest\Zed\FileManagerGui\FileManagerGuiPresentationTester $i
-     * @param \SprykerTest\Zed\FileManagerGui\PageObject\FileManagerGuiDirectoryCreatePage $directoryCreatePage
-     *
-     * @return void
-     */
     public function createDirectoryWithEmptyName(
         FileManagerGuiPresentationTester $i,
         FileManagerGuiDirectoryCreatePage $directoryCreatePage
@@ -71,12 +65,6 @@ class FileManagerGuiDirectoryCreateCest
         $i->dontSee(static::MESSAGE_ERROR_WITH_SQL_QUERY);
     }
 
-    /**
-     * @param \SprykerTest\Zed\FileManagerGui\FileManagerGuiPresentationTester $i
-     * @param \SprykerTest\Zed\FileManagerGui\PageObject\FileManagerGuiDirectoryCreatePage $directoryCreatePage
-     *
-     * @return void
-     */
     public function createDirectoryWithInvalidName(
         FileManagerGuiPresentationTester $i,
         FileManagerGuiDirectoryCreatePage $directoryCreatePage
@@ -103,12 +91,6 @@ class FileManagerGuiDirectoryCreateCest
         $i->dontSee(static::MESSAGE_ERROR_WITH_SQL_QUERY);
     }
 
-    /**
-     * @param \SprykerTest\Zed\FileManagerGui\FileManagerGuiPresentationTester $i
-     * @param \SprykerTest\Zed\FileManagerGui\PageObject\FileManagerGuiDirectoryCreatePage $directoryCreatePage
-     *
-     * @return void
-     */
     public function createDirectoryWithValidName(
         FileManagerGuiPresentationTester $i,
         FileManagerGuiDirectoryCreatePage $directoryCreatePage

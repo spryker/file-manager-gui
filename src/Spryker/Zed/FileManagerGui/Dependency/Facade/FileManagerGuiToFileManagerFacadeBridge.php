@@ -29,21 +29,11 @@ class FileManagerGuiToFileManagerFacadeBridge implements FileManagerGuiToFileMan
         $this->fileManagerFacade = $fileManagerFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileManagerDataTransfer $fileManagerDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\FileManagerDataTransfer
-     */
     public function saveFile(FileManagerDataTransfer $fileManagerDataTransfer): FileManagerDataTransfer
     {
         return $this->fileManagerFacade->saveFile($fileManagerDataTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\FileDirectoryTransfer $fileDirectoryTransfer
-     *
-     * @return int
-     */
     public function saveDirectory(FileDirectoryTransfer $fileDirectoryTransfer): int
     {
         return $this->fileManagerFacade->saveDirectory($fileDirectoryTransfer);
@@ -199,11 +189,6 @@ class FileManagerGuiToFileManagerFacadeBridge implements FileManagerGuiToFileMan
         return $this->fileManagerFacade->findAllowedMimeTypes();
     }
 
-    /**
-     * @param int $idFile
-     *
-     * @return int
-     */
     public function getFileInfoVersionsCount(int $idFile): int
     {
         return $this->fileManagerFacade->getFileInfoVersionsCount($idFile);

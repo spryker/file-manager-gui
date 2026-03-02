@@ -71,10 +71,6 @@ class FileTable extends AbstractTable
      */
     protected $fileDirectoryId;
 
-    /**
-     * @param \Orm\Zed\FileManager\Persistence\SpyFileQuery $fileQuery
-     * @param int|null $fileDirectoryId
-     */
     public function __construct(
         SpyFileQuery $fileQuery,
         ?int $fileDirectoryId = null

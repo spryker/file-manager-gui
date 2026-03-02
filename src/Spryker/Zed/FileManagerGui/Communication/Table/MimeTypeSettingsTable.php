@@ -87,10 +87,6 @@ class MimeTypeSettingsTable extends AbstractTable
      */
     protected FileManagerGuiToUtilEncodingServiceInterface $utilEncodingService;
 
-    /**
-     * @param \Orm\Zed\FileManager\Persistence\SpyMimeTypeQuery $mimeTypeQuery
-     * @param \Spryker\Zed\FileManagerGui\Dependency\Service\FileManagerGuiToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(
         SpyMimeTypeQuery $mimeTypeQuery,
         FileManagerGuiToUtilEncodingServiceInterface $utilEncodingService

@@ -32,11 +32,6 @@ class FileFormDataProvider
      */
     protected FileManagerGuiConfig $fileManagerGuiConfig;
 
-    /**
-     * @param \Spryker\Zed\FileManagerGui\Dependency\Facade\FileManagerGuiToLocaleFacadeInterface $localeFacade
-     * @param \Spryker\Zed\FileManagerGui\Dependency\Facade\FileManagerGuiToFileManagerFacadeInterface $fileManagerFacade
-     * @param \Spryker\Zed\FileManagerGui\FileManagerGuiConfig $fileManagerGuiConfig
-     */
     public function __construct(
         FileManagerGuiToLocaleFacadeInterface $localeFacade,
         FileManagerGuiToFileManagerFacadeInterface $fileManagerFacade,

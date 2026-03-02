@@ -16,18 +16,8 @@ use Generated\Shared\Transfer\MimeTypeTransfer;
 
 interface FileManagerGuiToFileManagerFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\FileManagerDataTransfer $fileManagerDataTransfer
-     *
-     * @return \Generated\Shared\Transfer\FileManagerDataTransfer
-     */
     public function saveFile(FileManagerDataTransfer $fileManagerDataTransfer): FileManagerDataTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\FileDirectoryTransfer $fileDirectoryTransfer
-     *
-     * @return int
-     */
     public function saveDirectory(FileDirectoryTransfer $fileDirectoryTransfer): int;
 
     /**
@@ -168,10 +158,5 @@ interface FileManagerGuiToFileManagerFacadeInterface
      */
     public function findAllowedMimeTypes(): MimeTypeCollectionTransfer;
 
-    /**
-     * @param int $idFile
-     *
-     * @return int
-     */
     public function getFileInfoVersionsCount(int $idFile): int;
 }

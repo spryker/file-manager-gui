@@ -25,10 +25,6 @@ class FileDirectoryFormDataProvider
      */
     protected $localeFacade;
 
-    /**
-     * @param \Spryker\Zed\FileManagerGui\Dependency\Facade\FileManagerGuiToFileManagerFacadeInterface $fileManagerFacade
-     * @param \Spryker\Zed\FileManagerGui\Dependency\Facade\FileManagerGuiToLocaleFacadeInterface $localeFacade
-     */
     public function __construct(
         FileManagerGuiToFileManagerFacadeInterface $fileManagerFacade,
         FileManagerGuiToLocaleFacadeInterface $localeFacade

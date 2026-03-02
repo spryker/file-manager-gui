@@ -17,9 +17,6 @@ class MimeTypeFormDataProvider
      */
     protected $fileManagerFacade;
 
-    /**
-     * @param \Spryker\Zed\FileManagerGui\Dependency\Facade\FileManagerGuiToFileManagerFacadeInterface $fileManagerFacade
-     */
     public function __construct(FileManagerGuiToFileManagerFacadeInterface $fileManagerFacade)
     {
         $this->fileManagerFacade = $fileManagerFacade;

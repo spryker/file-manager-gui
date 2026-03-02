@@ -120,11 +120,6 @@ class FileManagerGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addFileQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_FILE, $container->factory(function () {
@@ -134,11 +129,6 @@ class FileManagerGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addFileInfoQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_FILE_INFO, $container->factory(function () {
@@ -148,11 +138,6 @@ class FileManagerGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addMimeTypeQuery(Container $container): Container
     {
         $container->set(static::PROPEL_QUERY_MIME_TYPE, $container->factory(function () {
@@ -162,11 +147,6 @@ class FileManagerGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container) {
@@ -178,11 +158,6 @@ class FileManagerGuiDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addTableActionsExpanderPlugins(Container $container): Container
     {
         $container->set(static::PLUGINS_FILE_INFO_VIEW_TABLE_ACTIONS_EXPANDER, function () {

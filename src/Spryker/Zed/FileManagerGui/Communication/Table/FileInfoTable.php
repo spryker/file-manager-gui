@@ -49,10 +49,6 @@ abstract class FileInfoTable extends AbstractTable
      */
     protected $idFile;
 
-    /**
-     * @param \Orm\Zed\FileManager\Persistence\SpyFileInfoQuery $fileInfoQuery
-     * @param int $idFile
-     */
     public function __construct(SpyFileInfoQuery $fileInfoQuery, int $idFile)
     {
         $this->fileInfoQuery = $fileInfoQuery;

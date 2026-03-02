@@ -204,17 +204,11 @@ class FileManagerGuiCommunicationFactory extends AbstractCommunicationFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\FileManagerGui\Dependency\Service\FileManagerGuiToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): FileManagerGuiToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(FileManagerGuiDependencyProvider::SERVICE_UTIL_ENCODING);
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createDeleteFileForm(): FormInterface
     {
         return $this->getFormFactory()->create(DeleteFileForm::class, [], [
@@ -222,9 +216,6 @@ class FileManagerGuiCommunicationFactory extends AbstractCommunicationFactory
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function createDeleteDirectoryForm(): FormInterface
     {
         return $this->getFormFactory()->create(DeleteDirectoryForm::class, [], [
@@ -232,9 +223,6 @@ class FileManagerGuiCommunicationFactory extends AbstractCommunicationFactory
         ]);
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function getDeleteMimeTypeForm(): FormInterface
     {
         return $this->getFormFactory()->create(DeleteMimeTypeForm::class, [], [

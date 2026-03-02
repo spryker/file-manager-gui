@@ -11,9 +11,6 @@ use Generated\Shared\Transfer\LocaleTransfer;
 
 interface FileManagerGuiToLocaleFacadeInterface
 {
-    /**
-     * @return \Generated\Shared\Transfer\LocaleTransfer
-     */
     public function getCurrentLocale(): LocaleTransfer;
 
     /**

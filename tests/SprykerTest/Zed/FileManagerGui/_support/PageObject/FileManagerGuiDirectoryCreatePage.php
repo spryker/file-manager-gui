@@ -55,20 +55,11 @@ class FileManagerGuiDirectoryCreatePage
      */
     protected FileManagerGuiPresentationTester $tester;
 
-    /**
-     * @param \SprykerTest\Zed\FileManagerGui\FileManagerGuiPresentationTester $tester
-     */
     public function __construct(FileManagerGuiPresentationTester $tester)
     {
         $this->tester = $tester;
     }
 
-    /**
-     * @param string $directoryName
-     * @param string $localizedTitle
-     *
-     * @return void
-     */
     public function createDirectory(string $directoryName, string $localizedTitle = ''): void
     {
         $i = $this->tester;
@@ -95,21 +86,11 @@ class FileManagerGuiDirectoryCreatePage
         return $this->tester->grabMultiple(static::SELECTOR_LOCALIZED_TITLES, 'id');
     }
 
-    /**
-     * @param string $idLocalizedTitleField
-     *
-     * @return string
-     */
     public function getLocalizedTitleErrorBlockSelectorByIdLocalizedTitleField(string $idLocalizedTitleField): string
     {
         return sprintf('#%s+span.help-block', $idLocalizedTitleField);
     }
 
-    /**
-     * @param string $localizedTitleData
-     *
-     * @return void
-     */
     protected function fillLocalizedTitles(string $localizedTitleData): void
     {
         $i = $this->tester;
