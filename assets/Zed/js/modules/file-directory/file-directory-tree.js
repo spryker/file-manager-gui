@@ -6,6 +6,7 @@
 'use strict';
 
 require('jstree');
+var DOMPurify = require('dompurify');
 
 var $treeContainer = $('#file-directory-tree-container');
 var $treeContent = $('#file-directory-tree-content');
@@ -181,7 +182,7 @@ function reinitializeTree($tree) {
         url: '/file-manager-gui/directories-tree/tree',
         type: 'GET',
         success: function (response) {
-            $tree.html(response);
+            $tree.html(DOMPurify.sanitize(response));
             initJsTree();
         },
         error: function (jqXHR, textStatus, errorThrown) {},
