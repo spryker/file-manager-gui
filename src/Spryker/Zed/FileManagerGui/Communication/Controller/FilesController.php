@@ -27,7 +27,7 @@ class FilesController extends AbstractController
      */
     public function indexAction(Request $request)
     {
-        $fileDirectoryId = $request->request->getInt(static::FILE_DIRECTORY_ID) ?: null;
+        $fileDirectoryId = (int)$request->request->get(static::FILE_DIRECTORY_ID, 0) ?: null;
 
         $fileTable = $this->getFactory()
             ->createFileTable($fileDirectoryId);
