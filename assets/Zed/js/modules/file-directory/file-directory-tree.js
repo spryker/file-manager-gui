@@ -7,6 +7,8 @@
 
 require('jstree');
 var DOMPurify = require('dompurify');
+var table = require('ZedGuiModules/libs/table/table');
+var tableAccess = require('ZedGuiModules/libs/table/table-access');
 
 var $treeContainer = $('#file-directory-tree-container');
 var $treeContent = $('#file-directory-tree-content');
@@ -18,6 +20,7 @@ var $treeOrderSaveBtn = $('#file-directory-tree-save-btn');
 
 var ajaxRequest;
 var treeSearchTimeout = false;
+var filesTableHandle = null;
 
 var config = {
     fileDirectoryTreeUrl: '/file-manager-gui/directories-tree/load',
@@ -49,7 +52,19 @@ function initialize() {
  * @return {void}
  */
 function initJsTree() {
-    $('#file-directory-files-list').load('/file-manager-gui/files');
+    $('#file-directory-files-list').load('/file-manager-gui/files', function () {
+        var filesTable = this.querySelector('table[id]');
+
+        if (!filesTable) {
+            return;
+        }
+
+        this.dispatchEvent(new CustomEvent(table.TABLE_INIT_EVENT, { bubbles: true }));
+
+        tableAccess.requestTable(filesTable, function (handle) {
+            filesTableHandle = handle;
+        });
+    });
 
     $('#file-directory-tree')
         .jstree({
@@ -74,7 +89,6 @@ function initJsTree() {
         })
         .on('changed.jstree', function (e, data) {
             var $filesList = $('#file-directory-files-list'),
-                $filesTable = $filesList.find('table').first(),
                 $deleteDirectoryButton = $('#delete-directory-link'),
                 $deleteDirectoryConfirmationButton = $('#delete-directory-confirmation-button');
 
@@ -92,10 +106,12 @@ function initJsTree() {
             }
 
             $filesList.show();
-            $filesTable
-                .DataTable()
-                .ajax.url('/file-manager-gui/files/table?file-directory-id=' + data.node.data.idFileDirectoryNode)
-                .load();
+
+            if (filesTableHandle) {
+                filesTableHandle.reload(
+                    '/file-manager-gui/files/table?file-directory-id=' + data.node.data.idFileDirectoryNode,
+                );
+            }
             $deleteDirectoryButton.removeAttr('disabled');
             $deleteDirectoryConfirmationButton
                 .closest('form')
