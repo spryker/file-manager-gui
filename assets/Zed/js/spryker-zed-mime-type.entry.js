@@ -6,4 +6,5 @@
 'use strict';
 
 require('./modules/mime-type/main');
+require('jstree/dist/themes/default/style.css');
 require('../sass/main.scss');

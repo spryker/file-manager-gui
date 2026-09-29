@@ -10,15 +10,11 @@ var DOMPurify = require('dompurify');
 var table = require('ZedGuiModules/libs/table/table');
 var tableAccess = require('ZedGuiModules/libs/table/table-access');
 
-var $treeContainer = $('#file-directory-tree-container');
-var $treeContent = $('#file-directory-tree-content');
 var $treeSearchField = $('#file-directory-tree-search-field');
 var $treeProgressBar = $('#file-directory-tree-loader');
-var $formProgressBar = $('#file-directory-node-form-loader');
 var $treeUpdateProgressBar = $('#file-directory-tree-update-loader');
 var $treeOrderSaveBtn = $('#file-directory-tree-save-btn');
 
-var ajaxRequest;
 var treeSearchTimeout = false;
 var filesTableHandle = null;
 
@@ -88,9 +84,9 @@ function initJsTree() {
             },
         })
         .on('changed.jstree', function (e, data) {
-            var $filesList = $('#file-directory-files-list'),
-                $deleteDirectoryButton = $('#delete-directory-link'),
-                $deleteDirectoryConfirmationButton = $('#delete-directory-confirmation-button');
+            var $filesList = $('#file-directory-files-list');
+            var $deleteDirectoryButton = $('#delete-directory-link');
+            var $deleteDirectoryConfirmationButton = $('#delete-directory-confirmation-button');
 
             $('#add-file-link').attr(
                 'href',
@@ -181,7 +177,7 @@ function onTreeSaveOrderClick() {
     });
 }
 
-function reinitializeTree($tree) {
+function reinitializeTree() {
     var $tree = $('#file-directory-tree');
 
     $tree.jstree('destroy').empty();
